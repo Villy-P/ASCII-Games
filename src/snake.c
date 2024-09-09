@@ -53,7 +53,7 @@ void moveTo(struct Snake *snake) {
     }
 
     snake->length += onApple;
-    snake->segments = (struct Segment**)realloc(snake->segments, snake->length * sizeof(struct Segment));
+    snake->segments = (struct Segment**)realloc(snake->segments, snake->length * sizeof(struct Segment*));
     if (snake->segments == NULL) {
         printf("Memory allocation failed.\n");
         exit(1);
