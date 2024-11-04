@@ -15,3 +15,7 @@ target_compile_options(C_SNAKE PRIVATE
     "-fdiagnostics-color=always"
     "-g"
 )
+
+if(UNIX)
+    target_link_libraries(C_SNAKE "ncurses")
+endif()

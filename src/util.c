@@ -4,6 +4,9 @@
 
 #ifdef __WIN32
 #include <windows.h>
+#else
+#include <X11/Xlib.h>
+#include <X11/keysym.h>
 #endif
 
 int wasKeyDown(int key) {

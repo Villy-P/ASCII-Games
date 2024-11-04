@@ -8,10 +8,18 @@
 
 #ifdef __WIN32
 #include <windows.h>
+#else
+#include <unistd.h>
+#include <ncurses.h>
 #endif
 
 int main() {
     srand(time(0));
+    #ifndef __WIN32
+    WINDOW *w = initscr();
+    cbreak();
+    nodelay(w, TRUE);
+    #endif
     int game = 1;
     struct Segment* head = generateSegment(gridWidth / 4, gridHeight / 2);
     struct Snake* snake = generateSnake(head);
@@ -29,7 +37,11 @@ int main() {
             game = 0;
             printf("%c[%dBYOU WON!\n", 0x1B, gridHeight + 3);
         }
+        #ifdef __WIN32
         Sleep(100);
+        #else
+        sleep(100);
+        #endif
     }
     free(head);
     free(snake);

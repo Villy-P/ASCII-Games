@@ -16,6 +16,8 @@ The program uses the Windows function `GetAsyncKeyState` to get keypresses that 
 
 Make sure you have `ninja`, `cmake`, and a `C compiler`.
 
+> If you're running this on Linux, you need the `ncurses` library
+
 Then run these commands:
 
 ``` txt
