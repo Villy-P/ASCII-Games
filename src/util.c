@@ -1,6 +1,8 @@
 #include "util.h"
 
+#ifdef __WIN32
 #include <windows.h>
+#endif
 
 int wasKeyDown(int key) {
     if (0x00000001 & GetAsyncKeyState(key))

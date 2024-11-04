@@ -4,7 +4,10 @@
 
 #include <stdio.h>
 #include <time.h>
+
+#ifdef __WIN32
 #include <windows.h>
+#endif
 
 int main() {
     srand(time(0));
