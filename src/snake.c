@@ -42,8 +42,8 @@ void moveTo(struct Snake *snake) {
 
     if (onApple) {
         while (1) {
-            int xPos = random(0, gridWidth - 1);
-            int yPos = random(0, gridHeight - 1);
+            int xPos = randrange(0, gridWidth - 1);
+            int yPos = randrange(0, gridHeight - 1);
             if (!isSegmentAt(snake, xPos, yPos)) {
                 free(apple);
                 apple = generateSegment(xPos, yPos);
