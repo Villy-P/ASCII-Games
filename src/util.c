@@ -1,5 +1,7 @@
 #include "util.h"
 
+#include <stdlib.h>
+
 #ifdef __WIN32
 #include <windows.h>
 #endif
