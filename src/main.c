@@ -1,24 +1,18 @@
 #include "grid.h"
 #include "segment.h"
 #include "snake.h"
+#include "platform.h"
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
 
-#ifdef __WIN32
-#include <windows.h>
-#else
-#include <unistd.h>
-#include <ncurses.h>
-#endif
-
 int main() {
     srand(time(0));
     #ifndef __WIN32
-    WINDOW *w = initscr();
-    cbreak();
-    nodelay(w, TRUE);
+        WINDOW *w = initscr();
+        cbreak();
+        nodelay(w, TRUE);
     #endif
     int game = 1;
     struct Segment* head = generateSegment(gridWidth / 4, gridHeight / 2);
