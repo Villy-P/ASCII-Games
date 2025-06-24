@@ -7,6 +7,9 @@
 #include <unistd.h>
 #include <termios.h>
 #include <ncurses.h>
+
+#include <X11/Xlib.h>
+#include <X11/keysym.h>
 #endif
 
 #endif
