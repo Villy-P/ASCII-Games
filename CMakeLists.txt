@@ -17,5 +17,5 @@ target_compile_options(C_SNAKE PRIVATE
 )
 
 if(UNIX)
-    target_link_libraries(C_SNAKE "ncurses")
+    target_link_libraries(C_SNAKE "ncurses" "X11")
 endif()

@@ -9,3 +9,7 @@ reset:
 run:
 	ninja -C build
 	.\C_SNAKE.exe
+
+run-linux:
+	ninja -C build
+	./C_SNAKE
