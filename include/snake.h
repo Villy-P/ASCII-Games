@@ -2,6 +2,7 @@
 #define __C_SNAKE_SNAKE__
 
 #include "segment.h"
+#include "platform.h"
 
 enum Direction {
     UP = 1,
@@ -19,7 +20,7 @@ struct Snake {
 struct Snake* generateSnake(struct Segment *head);
 int isSegmentAt(struct Snake *snake, int x, int y);
 void moveTo(struct Snake *snake);
-void handleKeypresses(struct Snake *snake);
+void handleKeypresses(struct Snake *snake, Display *display);
 int moveInDirection(struct Snake *snake, enum Direction direction);
 int isGameOver(struct Snake *snake);
 

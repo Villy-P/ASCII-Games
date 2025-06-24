@@ -3,6 +3,8 @@
 
 #ifdef __WIN32
 #include <windows.h>
+
+struct DisplayDef {} Display;
 #else
 #include <unistd.h>
 #include <termios.h>

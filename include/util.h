@@ -1,7 +1,9 @@
 #ifndef __C_SNAKE_UTIL__
 #define __C_SNAKE_UTIL__
 
-int wasKeyDown(int key);
+#include "platform.h"
+
+int wasKeyDown(int key, Display *display);
 int randrange(int min, int max);
 
 #endif

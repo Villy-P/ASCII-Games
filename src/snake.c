@@ -63,14 +63,14 @@ void moveTo(struct Snake *snake) {
     snake->segments[0] = move;
 }
 
-void handleKeypresses(struct Snake *snake) {
-    if (wasKeyDown('W'))
+void handleKeypresses(struct Snake *snake, Display *display) {
+    if (wasKeyDown('W', display))
         moveInDirection(snake, UP);
-    else if (wasKeyDown('A'))
+    else if (wasKeyDown('A', display))
         moveInDirection(snake, LEFT);
-    else if (wasKeyDown('S'))
+    else if (wasKeyDown('S', display))
         moveInDirection(snake, DOWN);
-    else if (wasKeyDown('D'))
+    else if (wasKeyDown('D', display))
         moveInDirection(snake, RIGHT);
 }
 

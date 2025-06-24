@@ -10,9 +10,17 @@
 int main() {
     srand(time(0));
     #ifndef __WIN32
-        WINDOW *w = initscr();
+        WINDOW* w = initscr();
         cbreak();
         nodelay(w, TRUE);
+
+        Display* display = XOpenDisplay(NULL);
+        if (display == NULL) {
+            fprintf(stderr, "Unable to open X display\n");
+            return 0;
+        }
+    #else
+        Display* display = NULL;
     #endif
     int game = 1;
     struct Segment* head = generateSegment(gridWidth / 4, gridHeight / 2);
@@ -21,7 +29,7 @@ int main() {
     while (game) {
         displayGrid(snake);
         printf("%c[%dA\n", 0x1B, gridHeight + 3);
-        handleKeypresses(snake);
+        handleKeypresses(snake, display);
         moveTo(snake);
         if (isGameOver(snake)) {
             game = 0;
