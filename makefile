@@ -1,11 +1,15 @@
 .ONESHELL:
 
-reset:
-	rmdir build
-	mkdir build
-	cd build
+snake-reset:
+	rmdir snake/build
+	mkdir snake/build
+	cd snake/build
 	cmake -GNinja ..
 
-run:
-	ninja -C build
-	.\C_SNAKE.exe
+snake-run:
+	ninja -C snake/build
+	.\snake\build\C_SNAKE.exe
+
+ms-run:
+	cd ms
+	dotnet run
